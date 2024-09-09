@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas ações</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container mt-4">
+        <div class="container mt-4">
+            <div class="d-flex p-3 my-3 text-white bg-secondary rounded shadow-sm">
+                <div class="d-flex align-items-center me-auto">
+                    <div class="lh-100">
+                        <h2 class="mb-0">Minhas ações</h2>
+                    </div>
+                </div>
+                <div class="ms-auto button-container">
+                    <button onclick="openCreateModal()" class="styled-button">
+                        Adicionar ação
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr class="text-center">
+                    <th>Numero</th>
+                    <th>Código</th>
+                    <th>Corretora</th>
+                    <th>Data de Compra</th>
+                    <th>Quantidade</th>
+                    <th>Preço Médio Pago</th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+            <tbody id="stocks-tbody">
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="7" class="text-center" id="no-stocks-message">
+                        <h4>Nenhuma ação cadastrada</h4>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div id="create" class="section" style="display: none;">
+            <h2 id="form-title">Criar Ação</h2>
+            <form id="stock-form">
+                <input type="hidden" id="stock-id">
+                <div class="form-group">
+                    <label for="code">Código</label>
+                    <input type="text" class="form-control" id="code" required>
+                </div>
+                <div class="form-group">
+                    <label for="avg_price_paid">Preço Médio Pago</label>
+                    <input type="text" class="form-control" id="avg_price_paid" required>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantidade</label>
+                    <input type="number" class="form-control" id="quantity" required>
+                </div>
+                <div class="form-group">
+                    <label for="broker">Corretora</label>
+                    <input type="text" class="form-control" id="broker" required>
+                </div>
+                <div class="form-group">
+                    <label for="purchase_date">Data da Compra</label>
+                    <input type="date" class="form-control" id="purchase_date" required>
+                </div>
+                <button type="submit" class="btn btn-success">Salvar</button>
+                <button type="button" class="btn btn-secondary" onclick="document.getElementById('create').style.display='none'">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
